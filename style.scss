@@ -1,0 +1,72 @@
+$page-background-color: #eee;
+$white-color: #fff;
+$spacing-unit: 1rem;
+
+@mixin card-style {
+  background: $white-color;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  background: $page-background-color;
+}
+
+header {
+  @include card-style;
+  text-align: center;
+  img {
+    height: $spacing-unit * 8;
+    vertical-align: top;
+  }
+  nav {
+    a {
+      display: block;
+    }
+  }
+}
+
+.container {
+  padding: $spacing-unit;
+}
+
+.wrapper {
+  padding: $spacing-unit;
+}
+
+main.container {
+  @include card-style;
+  padding: $spacing-unit;
+  border-radius: $spacing-unit;
+}
+
+table,
+thead,
+tbody {
+  display: table;
+  width: 100%;
+}
+
+footer {
+  text-align: center;
+  padding: 0 $spacing-unit $spacing-unit $spacing-unit;
+}
+
+@media (min-width: 768px) {
+  header {
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+    }
+    img {
+      height: 6rem;
+    }
+    nav {
+      a {
+        display: inline;
+        margin-left: $spacing-unit;
+      }
+    }
+  }
+}
